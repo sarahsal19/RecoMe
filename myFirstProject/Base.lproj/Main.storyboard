@@ -96,21 +96,16 @@
                                 <rect key="frame" x="0.0" y="50" width="414" height="796"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HHf-cg-McK">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="cno-rU-Ls7" customClass="PinterestLayout" customModule="myFirstProject" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="item1" reuseIdentifier="item1" id="xab-nh-taV" customClass="MyCollectionViewCell" customModule="myFirstProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="133" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <size key="customSize" width="133" height="128"/>
+                                        <size key="customSize" width="133" height="165"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

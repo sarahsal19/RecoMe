@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 
 
 struct Recommendation {
     
-    var img: String
+    var img: UIImage
     var Place: String
     var ItemName: String
     var RecoText: String

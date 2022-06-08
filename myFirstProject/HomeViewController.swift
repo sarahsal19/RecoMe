@@ -18,6 +18,19 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        recoCV.register(
+            UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "item1"
+                    )
+        recoCV.delegate = self
+        recoCV.dataSource = self
+        
+    
+        
+    }
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        
         DispatchQueue.main.async {
             
         
@@ -31,33 +44,50 @@ class HomeViewController: UIViewController{
                         let data = document.data()
                       
                         var reco: Recommendation = Recommendation(
-                            img: data["RecoImage"] as! String,
+                            img: UIImage(named: "default")!,
                             Place: data["RecoPlace"] as! String,
                             ItemName: data["RecoName"] as! String,
                             RecoText: data["RecoText"] as! String,
                             URL: data["RecoURL"] as! String,
                             Author: data["AuthorUid"] as! String,
                             postDate: "20:32 Wed, 30 Oct 2019" ) //data["postDate"] as! String )
+                       
+                        let url = URL(string: data["RecoImage"] as! String)
+                        URLSession.shared.dataTask(with: url!, completionHandler: { (data1, response, error) in
+                            
+                            //download hit an error so lets return out
+                            if let error = error {
+                                print(error)
+                                return
+                            }
+                            
+                            DispatchQueue.main.async(execute: {
+                                
+                                if let downloadedImage = UIImage(data: data1!) {
+                                    imageCache.setObject(downloadedImage, forKey: (data["RecoImage"] as! String) as NSString)
+                                    reco.img = downloadedImage
+                                }
+                            })
+                            
+                        }).resume()
                         
+                        
+                        //for i in 1...4 {
                         self.recos.append(reco)
-                        self.recoCV.reloadData()
+                        //}
+                        DispatchQueue.main.async {
+                            self.recoCV.reloadData()
+                            print(self.recos[0])
+                            
+                        }
                         
                     }
 
                 }
             } // quary
         }//dis
-        
-        recoCV.register(
-            UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "item1"
-                               )
-        
-        recoCV.delegate = self
-        recoCV.dataSource = self
-        
     }
- 
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -75,7 +105,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 print(recos[indexPath.row].ItemName)
         cell.recoTxt.text = recos[indexPath.row].ItemName
     cell.configure(with: recos[indexPath.row])
-    cell.recoImg.loadImageUsingCacheWithUrlString(recos[indexPath.row].img)
+    cell.recoImg.image = recos[indexPath.row].img
 
         //cell.recoImg.image = UIImage(named: "default")
 
@@ -96,11 +126,28 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
         let adjustedWidth = collectionViewWidth - spaceBetweenCells
         let width: CGFloat = floor(adjustedWidth / columns)
-        let height: CGFloat = 100 //اقدر اخليها تجيني من فنكشن تطلع لي كم طول البيانات اللي عندي ، عشان تصير زي بينترست لها احجام مختلفة
+        var height: CGFloat
+        if (indexPath.row % 2 == 0){
+             height = 250 }
+        else {
+             height = 300
+        }
         return CGSize(width: width, height: height)
     }
 
 }
+
+
+//extension HomeViewController: PinterestLayoutDelegate {
+//  func collectionView(
+//    _ collectionView: UICollectionView,
+//    heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+//    return loadImageUsingCacheWithUrlString(recos[indexPath.row].img).size.height
+//  }
+//}
+
+
+
 
 
 let imageCache = NSCache<NSString, AnyObject>()
@@ -140,3 +187,4 @@ extension UIImageView {
     }
     
 }
+
