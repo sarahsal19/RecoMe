@@ -13,9 +13,9 @@ struct Recommendation {
     
     var img: String
     var Place: String
-    var Item: Double
-    var comment: String
+    var ItemName: String
+    var RecoText: String
     var URL: String
     var Author: String
-   
+    var postDate: String
 }

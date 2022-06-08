@@ -22,8 +22,6 @@ class AddRecoViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var recoTextView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var urlField: UITextField!
-    var fileName = ""
-    var downloadURL = ""
     let cloudDocID = UUID().uuidString
     
     override func viewDidLoad() {
@@ -34,7 +32,7 @@ class AddRecoViewController: UIViewController, UIImagePickerControllerDelegate &
                 placeholderLabel.font = .italicSystemFont(ofSize: (recoTextView.font?.pointSize)!)
                 placeholderLabel.sizeToFit()
                 recoTextView.addSubview(placeholderLabel)
-                //placeholderLabel.frame.origin = CGPoint(x: 5, y: (recoTextView.font?.pointSize)! / 2)
+                placeholderLabel.frame.origin = CGPoint(x: 5, y: (recoTextView.font?.pointSize)! / 2)
                 placeholderLabel.textColor = .tertiaryLabel
                 placeholderLabel.isHidden = !recoTextView.text.isEmpty
 
