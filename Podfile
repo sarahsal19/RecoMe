@@ -6,6 +6,6 @@ target 'myFirstProject' do
   use_frameworks!
 
   # Pods for myFirstProject
-  pod 'PinterestLayout'
+  
 
 end

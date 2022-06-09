@@ -15,7 +15,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-      // self.backgroundColor = UIColor.blue
+       self.backgroundColor = #colorLiteral(red: 0.4960824847, green: 0.751829803, blue: 0.6139376163, alpha: 0.1231891556)
         layer.cornerRadius = 15
         recoImg.layer.cornerRadius = 20
         recoImg.clipsToBounds = true
@@ -26,7 +26,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with model: Recommendation) {
-        recoImg.image = model.img
+       // recoImg.loadImageUsingCacheWithUrlString(model.img)
         //recoImg.image = model.img
         recoTxt.text = model.ItemName
     }

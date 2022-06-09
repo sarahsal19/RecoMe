@@ -1,16 +1,3 @@
-PODS:
-  - PinterestLayout (1.0.3)
-
-DEPENDENCIES:
-  - PinterestLayout
-
-SPEC REPOS:
-  trunk:
-    - PinterestLayout
-
-SPEC CHECKSUMS:
-  PinterestLayout: f1c7ec0254ffa842d69f1b43e4436c8ded4359b9
-
-PODFILE CHECKSUM: 82a0790edabd05dafed5b37cf569c891e712018c
+PODFILE CHECKSUM: 99fbdd68a317adebef8393f328a4121cde79ec59
 
 COCOAPODS: 1.11.2
