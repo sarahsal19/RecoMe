@@ -24,18 +24,23 @@ class AddRecoViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var urlField: UITextField!
     let cloudDocID = UUID().uuidString
     
+    @IBOutlet weak var publishRecoBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recoTextView.delegate = self
                 placeholderLabel.text = "ما هي توصيتك ؟"
-                placeholderLabel.font = .italicSystemFont(ofSize: (recoTextView.font?.pointSize)!)
-                placeholderLabel.sizeToFit()
-                recoTextView.addSubview(placeholderLabel)
-                placeholderLabel.frame.origin = CGPoint(x: 5, y: (recoTextView.font?.pointSize)! / 2)
+//                placeholderLabel.font = .italicSystemFont(ofSize: (recoTextView.font?.pointSize)!)
+//                placeholderLabel.sizeToFit()
+//                recoTextView.addSubview(placeholderLabel)
+//                placeholderLabel.frame.origin = CGPoint(x: 5, y: (recoTextView.font?.pointSize)! / 2)
                 placeholderLabel.textColor = .tertiaryLabel
                 placeholderLabel.isHidden = !recoTextView.text.isEmpty
 
+        publishRecoBtn.layer.cornerRadius = 15
+        publishRecoBtn.clipsToBounds = true
+        
+        
     }
  
     
@@ -131,7 +136,7 @@ class AddRecoViewController: UIViewController, UIImagePickerControllerDelegate &
                      // "RecoImage": self.downloadURL,
                       "RecoText": self.recoTextView.text,
                       "RecoURL": self.urlField.text,
-                      "postDate": Date.now
+                      "postDate": "12/06/2022"
             ], merge: true) { error in
               
               if error == nil {

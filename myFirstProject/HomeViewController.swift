@@ -11,6 +11,7 @@ import Firebase
 
 class HomeViewController: UIViewController{
 
+    @IBOutlet weak var addRecoBtn: UIButton!
     @IBOutlet weak var recoCV: UICollectionView!
     public var recos: [Recommendation] = []
 
@@ -31,6 +32,12 @@ class HomeViewController: UIViewController{
         recoCV.dataSource = self
         
         
+       // addRecoBtn.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        addRecoBtn.layer.cornerRadius = 0.5 * addRecoBtn.bounds.size.width
+        addRecoBtn.clipsToBounds = true
+        
+        //addRecoBtn.layer.cornerRadius = 100
+        //addRecoBtn.clipsToBounds = true
     
         
     }
@@ -75,6 +82,8 @@ class HomeViewController: UIViewController{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDetails" {
         let destVC = segue.destination as! RecoDetaillViewController
         
         let selectedReco = recoCV.indexPathsForSelectedItems![0][1]
@@ -82,12 +91,14 @@ class HomeViewController: UIViewController{
 //print("🟡\(selectedRow)")
         
         destVC.reciveData = recos[selectedReco]
-
-        
+        }
     }
     
     
     
+    @IBAction func goToAdd(_ sender: Any) {
+        performSegue(withIdentifier: "goToAddReco", sender: self)
+    }
     
     
     

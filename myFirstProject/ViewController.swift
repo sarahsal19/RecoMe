@@ -40,6 +40,7 @@ class ViewController: UIViewController {
                     self!.emailField.text = ""
                     self!.passField.text = ""
                     self?.performSegue(withIdentifier: "goToHome", sender: nil)
+//                    present((HomeViewController as UIViewController), animated: true, completion: nil)
                 }
                 else{
                     self!.errorLabel.text = "الرجاء التحقق من صحة البيانات"

@@ -178,7 +178,7 @@
 			);
 			mainGroup = 2636D399284E4A9C00FB4DC2;
 			packageReferences = (
-				2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
+				2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 2636D3A3284E4A9C00FB4DC2 /* Products */;
 			projectDirPath = "";
@@ -401,6 +401,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +431,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,7 +469,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
+		2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -480,22 +482,22 @@
 /* Begin XCSwiftPackageProductDependency section */
 		2636D3BA284E4D3300FB4DC2 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
 		2636D3BC284E4D3300FB4DC2 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
 		2636D3BE284E4D3300FB4DC2 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 		2636D3C0284E4D3300FB4DC2 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 2636D3B9284E4D3300FB4DC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
