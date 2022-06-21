@@ -20,6 +20,7 @@ class RecoDetaillViewController: UIViewController {
     
     @IBOutlet weak var openURL: UIImageView!
     
+    @IBOutlet weak var locationLabel: UILabel!
     var reciveData: Recommendation = Recommendation(img: "String", Place: "String", ItemName: "String", RecoText: "String", URL: "String", Author: "String", postDate: "String")
     
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class RecoDetaillViewController: UIViewController {
         recoImage.loadImageUsingCacheWithUrlString(reciveData.img)
         itemName.text = reciveData.ItemName
         recoLabel.text = reciveData.RecoText
-        
+        locationLabel.text = reciveData.Place 
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         openURL.isUserInteractionEnabled = true

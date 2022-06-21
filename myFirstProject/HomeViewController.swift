@@ -159,7 +159,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         if (indexPath.row % 2 == 0){
              height = 250 }
         else {
-             height = 300
+             height = 250
         }
         return CGSize(width: width, height: height)
     }
